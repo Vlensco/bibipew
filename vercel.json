@@ -5,7 +5,7 @@
   "outputDirectory": "public",
   "functions": {
     "api/index.php": {
-      "runtime": "vercel-php@0.7.3"
+      "runtime": "vercel-php@0.7.1"
     }
   },
   "env": {
@@ -32,16 +32,8 @@
       "dest": "/images/$1"
     },
     {
-      "src": "/favicon.png",
-      "dest": "/favicon.png"
-    },
-    {
-      "src": "/favicon.ico",
-      "dest": "/favicon.ico"
-    },
-    {
-      "src": "/robots.txt",
-      "dest": "/robots.txt"
+      "src": "/(favicon.ico|favicon.png|robots.txt)",
+      "dest": "/$1"
     },
     {
       "src": "/(.*)",
