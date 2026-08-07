@@ -10,7 +10,7 @@
   [![Inertia.js](https://img.shields.io/badge/Inertia.js-React-9553E9?style=for-the-badge&logo=inertia&logoColor=white)](https://inertiajs.com)
   [![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
   [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
-  [![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
+  [![Deployment](https://img.shields.io/badge/Deployment-Vercel-success?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
 
 </div>
 
