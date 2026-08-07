@@ -12,9 +12,7 @@ export default defineConfig({
         react(),
         tailwindcss(),
     ],
-    server: {
-        watch: {
-            ignored: ['**/storage/framework/views/**'],
-        },
+    build: {
+        outDir: 'dist',
     },
 });
