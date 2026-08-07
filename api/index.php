@@ -17,25 +17,42 @@ foreach ($directories as $dir) {
     }
 }
 
-// Environment variables for Vercel serverless execution
+// Create empty SQLite database in /tmp if missing
+if (!file_exists('/tmp/database.sqlite')) {
+    @touch('/tmp/database.sqlite');
+}
+
+// Set environment variables for Vercel serverless execution
+putenv('APP_ENV=production');
+putenv('APP_DEBUG=true');
+putenv('APP_KEY=base64:JGTYIJgqf7maquk2U0RlU2KWu5vMNpii474JsndELEw=');
 putenv('APP_STORAGE=/tmp/storage');
 putenv('VIEW_COMPILED_PATH=/tmp/views');
 putenv('BOOTSTRAP_CACHE_PATH=/tmp/bootstrap/cache');
+putenv('DB_CONNECTION=sqlite');
+putenv('DB_DATABASE=/tmp/database.sqlite');
 putenv('SESSION_DRIVER=cookie');
 putenv('CACHE_STORE=array');
 putenv('LOG_CHANNEL=stderr');
 
+$_ENV['APP_ENV'] = 'production';
+$_ENV['APP_DEBUG'] = 'true';
+$_ENV['APP_KEY'] = 'base64:JGTYIJgqf7maquk2U0RlU2KWu5vMNpii474JsndELEw=';
 $_ENV['APP_STORAGE'] = '/tmp/storage';
 $_ENV['VIEW_COMPILED_PATH'] = '/tmp/views';
 $_ENV['BOOTSTRAP_CACHE_PATH'] = '/tmp/bootstrap/cache';
+$_ENV['DB_CONNECTION'] = 'sqlite';
+$_ENV['DB_DATABASE'] = '/tmp/database.sqlite';
 $_ENV['SESSION_DRIVER'] = 'cookie';
 $_ENV['CACHE_STORE'] = 'array';
 $_ENV['LOG_CHANNEL'] = 'stderr';
 
 $_SERVER['APP_STORAGE'] = '/tmp/storage';
 $_SERVER['VIEW_COMPILED_PATH'] = '/tmp/views';
+$_SERVER['DB_CONNECTION'] = 'sqlite';
+$_SERVER['DB_DATABASE'] = '/tmp/database.sqlite';
 
-// Ensure autoload is loaded
+// Ensure vendor autoload is loaded
 if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
     require_once __DIR__ . '/../vendor/autoload.php';
 }
